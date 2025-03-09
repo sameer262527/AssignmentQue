@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+</head>
+<style>
+    form {
+      width: 300px;
+      margin-left: 5em;
+      margin-top: 5em;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    label {
+      font-weight: bold;
+    }
+</style>
+<body>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Select the form element
+    const form = document.getElementById('myForm');
+
+    // Add event listener for form submission
+    form.addEventListener('submit', function(event) {
+      // Select the form fields
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      // Validate the form fields
+      if (name === '' || email === '') {
+        // Prevent form submission if any field is empty
+        event.preventDefault();
+        
+        // Alert the user
+        alert('Both name and email fields are required!');
+      }
+    });
+  </script>
+</body>
+</html>

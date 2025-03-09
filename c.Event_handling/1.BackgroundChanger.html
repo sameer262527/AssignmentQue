@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Color</title>
+  <style>
+    /* Center the button on the page */
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      background-color: white;
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="changeColorBtn">Change Background Color</button>
+
+  <script>
+    // Select the button element
+    const button = document.getElementById('changeColorBtn');
+
+    // Add an event listener to the button
+    button.addEventListener('click', function() {
+      // Change the background color
+      document.body.style.backgroundColor = 'lightblue';
+      
+      // Change the button text
+      button.textContent = 'Changed background color';
+    });
+  </script>
+</body>
+</html>
