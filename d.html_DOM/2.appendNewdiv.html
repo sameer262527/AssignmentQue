@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Styled Div</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .new-div {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            width: 60%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #007bff;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Click the Button to Add a New Div</h2>
+    <button onclick="appendDiv()">Add New Div</button>
+    <div id="container"></div>
+
+    <script>
+        function appendDiv() {
+            // Create a new div element
+            let newDiv = document.createElement("div");
+            
+            // Add text content
+            newDiv.textContent = "This is a dynamically added div!";
+            
+            // Add a class for styling
+            newDiv.classList.add("new-div");
+
+            // Append the new div to the container
+            document.getElementById("container").appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
